@@ -10,7 +10,6 @@ class UserModel(db.Model):
     last_name: str = Column(String, nullable=False)
     email: str = Column(String, nullable=False, unique=True)
     password_hash: str = Column(String, nullable=True)
-    api_key: str = Column(String, nullable=False)
 
     def serializer(self):
         return {

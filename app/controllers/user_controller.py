@@ -13,10 +13,7 @@ def create_user():
 
     new_user = UserModel(**new_user_data)
 
-    access_token = create_access_token(identity=new_user.serializer())
-
     new_user.password = password_to_hash
-    new_user.api_key = access_token
 
     current_app.db.session.add(new_user)
     current_app.db.session.commit()
